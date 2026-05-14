@@ -1,0 +1,13 @@
+# Secret credentials — never commit these
+.env
+*.env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.code-workspace

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Total Roofing and Cladding</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      color: #333;
+      background: #fff;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: #f5f5f5;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 6px 0;
+    }
+
+    .top-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .top-bar a {
+      font-size: 0.78rem;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-bar a:hover { color: #29b6e8; }
+
+    .social-icon { width: 16px; height: 16px; fill: #555; }
+    .top-bar a:hover .social-icon { fill: #29b6e8; }
+
+    /* ─── HEADER ─── */
+    header {
+      background: #fff;
+      border-bottom: 2px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-top {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a2332;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-bottom {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #29b6e8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #333;
+      transition: color 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover { color: #29b6e8; }
+    nav a.active { color: #29b6e8; }
+
+    .btn-call {
+      background: #29b6e8;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-call:hover { background: #1a9fd1 !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: #1a2332;
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ─── MAIN ─── */
+    .main-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ─── FORM ─── */
+    .form-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a2332;
+      margin-bottom: 24px;
+    }
+
+    .form-card {
+      background: #fff;
+      border-right: 4px solid #29b6e8;
+      border-radius: 6px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 32px 28px 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .form-label .req { color: #8b0000; margin-left: 2px; }
+
+    .name-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      background: #efefef;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: #333;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      background: #e6e6e6;
+      border-color: #29b6e8;
+    }
+
+    input::placeholder, textarea::placeholder { color: #aaa; }
+
+    textarea { resize: vertical; min-height: 110px; }
+
+    .btn-submit {
+      margin-top: 8px;
+      padding: 11px 32px;
+      background: #29b6e8;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-submit:hover { background: #1a9fd1; }
+
+    .success-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      border-radius: 4px;
+      color: #065f46;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* ─── CONTACT INFO SIDEBAR ─── */
+    .info-section h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a2332;
+      margin-bottom: 24px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .info-item-icon {
+      width: 40px;
+      height: 40px;
+      background: #29b6e8;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-item-icon svg { fill: #fff; width: 18px; height: 18px; }
+
+    .info-item-text strong {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #999;
+      margin-bottom: 3px;
+    }
+
+    .info-item-text a,
+    .info-item-text p {
+      font-size: 0.92rem;
+      color: #1a2332;
+      line-height: 1.6;
+    }
+
+    .info-item-text a:hover { color: #29b6e8; }
+
+    .info-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 28px 0;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .social-btn svg { width: 16px; height: 16px; fill: #555; transition: fill 0.2s; }
+    .social-btn:hover { background: #29b6e8; }
+    .social-btn:hover svg { fill: #fff; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a2332;
+      color: rgba(255,255,255,0.65);
+      padding: 56px 24px 28px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand .logo-top { color: #fff; font-size: 1.1rem; }
+    .footer-brand .logo-bottom { color: #29b6e8; }
+
+    .footer-brand p {
+      font-size: 0.83rem;
+      line-height: 1.7;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-col h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 7px; }
+
+    .footer-col a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: #29b6e8; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+
+    .footer-bottom a { color: rgba(255,255,255,0.55); }
+    .footer-bottom a:hover { color: #29b6e8; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .main-wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 16px 60px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 1.6rem; }
+      .name-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <a href="https://facebook.com" target="_blank" rel="noopener">
+      <svg class="social-icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      Facebook
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener">
+      <svg class="social-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="#f5f5f5"/><circle cx="17.5" cy="6.5" r="1" fill="#f5f5f5"/></svg>
+      Instagram
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener">
+      <svg class="social-icon" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#f5f5f5"/></svg>
+      YouTube
+    </a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-top">Total Roofing and Cladding</span>
+      <span class="logo-bottom">Roofing &amp; Cladding Specialists</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Join The Team</a></li>
+        <li><a href="#" class="active">Contact</a></li>
+        <li><a href="tel:0397599045" class="btn-call">Call Now &nbsp;(03) 9759 9045</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>Contact our friendly team to organise a quote</p>
+</section>
+
+<!-- MAIN CONTENT -->
+<main>
+  <div class="main-wrap">
+
+    <!-- FORM -->
+    <div class="form-section">
+      <h2>Enquire Now</h2>
+      <div class="form-card">
+        <form id="contactForm" novalidate>
+
+          <div class="form-group">
+            <label class="form-label">Name <span class="req">*</span></label>
+            <div class="name-row">
+              <input type="text" id="firstName" name="firstName" placeholder="First" />
+              <input type="text" id="lastName"  name="lastName"  placeholder="Last"  />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="email@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiry">Enquiry</label>
+            <textarea id="enquiry" name="enquiry" placeholder="Tell us about your project…"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit</button>
+
+          <div class="success-msg" id="successMsg">
+            Thank you! We'll be in touch shortly.
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <aside class="info-section">
+      <h2>Contact Info</h2>
+
+      <div class="info-item">
+        <div class="info-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.58.57 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.58 1 1 0 01-.24 1.01z"/></svg>
+        </div>
+        <div class="info-item-text">
+          <strong>Phone</strong>
+          <a href="tel:0397599045">(03) 9759 9045</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
+        </div>
+        <div class="info-item-text">
+          <strong>Email</strong>
+          <a href="mailto:enquiries@totalrc.com.au">enquiries@totalrc.com.au</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <div class="info-item-text">
+          <strong>Address</strong>
+          <p>3/1470 Ferntree Gully Rd<br>Knoxfield VIC 3180</p>
+        </div>
+      </div>
+
+      <hr class="info-divider" />
+
+      <p style="font-size:0.82rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#999;margin-bottom:10px;">Follow Us</p>
+      <div class="social-row">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" title="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="#555"/><circle cx="17.5" cy="6.5" r="1" fill="#555"/></svg>
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener" class="social-btn" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#555"/></svg>
+        </a>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-top">Total Roofing and Cladding</span>
+          <span class="logo-bottom">Roofing &amp; Cladding Specialists</span>
+        </div>
+        <p>Premium roofing and cladding solutions for residential, multi-unit, and commercial projects across Melbourne and the Yarra Valley.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Roofing Services</a></li>
+          <li><a href="#">Cladding Services</a></li>
+          <li><a href="#">Join The Team</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Articles</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Roofing Locations</h4>
+        <ul>
+          <li><a href="#">South Yarra</a></li>
+          <li><a href="#">Richmond</a></li>
+          <li><a href="#">Ringwood</a></li>
+          <li><a href="#">Knox</a></li>
+          <li><a href="#">Brighton</a></li>
+          <li><a href="#">Sorrento</a></li>
+          <li><a href="#">Lilydale</a></li>
+          <li><a href="#">Mornington</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cladding Locations</h4>
+        <ul>
+          <li><a href="#">Toorak</a></li>
+          <li><a href="#">Windsor</a></li>
+          <li><a href="#">Balwyn</a></li>
+          <li><a href="#">Camberwell</a></li>
+          <li><a href="#">Mornington</a></li>
+          <li><a href="#">Hawthorn</a></li>
+          <li><a href="#">Kew</a></li>
+          <li><a href="#">Glen Waverley</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Total Roofing and Cladding. All rights reserved.</p>
+      <div style="display:flex;gap:16px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Sitemap</a>
+        <a href="mailto:enquiries@totalrc.com.au">enquiries@totalrc.com.au</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const WEBHOOK_URL = 'https://54.196.233.11.nip.io/webhook/contact-form';
+
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = e.target.querySelector('.btn-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const payload = {
+      firstName:    document.getElementById('firstName').value.trim(),
+      lastName:     document.getElementById('lastName').value.trim(),
+      phone:        document.getElementById('phone').value.trim(),
+      email:        document.getElementById('email').value.trim(),
+      enquiry:      document.getElementById('enquiry').value.trim(),
+      submitted_at: new Date().toISOString(),
+    };
+
+    try {
+      await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+    } catch (_) {}
+
+    e.target.reset();
+    document.getElementById('successMsg').style.display = 'block';
+    btn.textContent = 'Submitted';
+  });
+</script>
+
+</body>
+</html>
